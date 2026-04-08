@@ -258,3 +258,20 @@ loopBtn.addEventListener("click", () => {
 
   document.getElementById("clickSound").play();
 });
+
+function showMainWindow() {
+  mainWindow.style.display = "flex";
+  document.getElementById("taskbarMain").style.display = "flex";
+  bringToFront(mainWindow);
+}
+
+document.getElementById("shortcutRainy").addEventListener("click", (e) => {
+  e.preventDefault();
+  showMainWindow();
+  playSound();
+});
+
+document.getElementById("shortcutBlog").addEventListener("click", (e) => {
+  showMainWindow();
+  playSound();
+});
