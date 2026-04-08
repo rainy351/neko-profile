@@ -15,6 +15,7 @@ function updateTaskbarStatus() {
   const mainTaskbarBtn = document.getElementById("taskbarMain");
   const playerTaskbarBtn = document.getElementById("taskbarPlayer");
   const linksTaskbarBtn = document.getElementById("taskbarLinks");
+  const guestbookTaskbarBtn = document.getElementById("taskbarGuestbook");
 
   if (mainWindow.style.display !== "none") {
     mainTaskbarBtn.classList.add("active");
@@ -33,6 +34,14 @@ function updateTaskbarStatus() {
   } else {
     linksTaskbarBtn.classList.remove("active");
   }
+
+  if (guestbookWindow && guestbookTaskbarBtn) {
+    if (guestbookWindow.style.display !== "none") {
+      guestbookTaskbarBtn.classList.add("active");
+    } else {
+      guestbookTaskbarBtn.classList.remove("active");
+    }
+  }
 }
 
 function bringToFront(windowEl) {
@@ -44,12 +53,21 @@ function bringToFront(windowEl) {
 const mainWindow = document.getElementById("mainWindow");
 const playerWindow = document.getElementById("window2");
 const linksWindow = document.getElementById("window3");
+const guestbookWindow = document.getElementById("windowGuestbook");
+const taskbarGuestbookBtn = document.getElementById("taskbarGuestbook");
+
 makeDraggable(linksWindow, document.getElementById("titleBarLinks"));
 setupWindowControls(linksWindow, "taskbarLinks");
+
+makeDraggable(guestbookWindow, document.getElementById("titleBarGuestbook"));
+setupWindowControls(guestbookWindow, "taskbarGuestbook");
 
 mainWindow.addEventListener("mousedown", () => bringToFront(mainWindow));
 playerWindow.addEventListener("mousedown", () => bringToFront(playerWindow));
 linksWindow.addEventListener("mousedown", () => bringToFront(linksWindow));
+guestbookWindow.addEventListener("mousedown", () =>
+  bringToFront(guestbookWindow),
+);
 
 function makeDraggable(windowEl, titleBar) {
   let offsetX = 0,
@@ -180,6 +198,18 @@ document.getElementById("menuItemLinks").addEventListener("click", () => {
   linksWindow.style.display = "flex";
   document.getElementById("taskbarLinks").style.display = "flex";
   bringToFront(linksWindow);
+  startMenu.style.display = "none";
+  startButton.classList.remove("active");
+});
+
+document.getElementById("menuItemGuestbook").addEventListener("click", () => {
+  guestbookWindow.style.display = "flex";
+  taskbarGuestbookBtn.style.display = "flex";
+  bringToFront(guestbookWindow);
+
+  // Прячем пуск после клика
+  const startMenu = document.getElementById("startMenu");
+  const startButton = document.getElementById("startButton");
   startMenu.style.display = "none";
   startButton.classList.remove("active");
 });

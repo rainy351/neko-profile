@@ -243,6 +243,16 @@
           <h2>Latest blog posts</h2>
           <div class="blog-posts">
             <div class="post">
+              <p class="post-title">4/08/2026 -- I added a guestbook!</p>
+              <p class="post-excerpt">
+                I added a guestbook to the site, so now you can leave comments~
+                <br />It's powered by HTML Comment Box, which is a service that
+                allows you to add a comment section to ur static site. Check it
+                out if you want and ykyk. <br />Feel free to leave a message~ (i
+                hope it works) xp
+              </p>
+            </div>
+            <div class="post">
               <p class="post-excerpt">
                 So, I just stumbled upon someone else's site, and it’s like 300
                 times better in every single way. I’m honestly tilted as hell,
@@ -495,6 +505,83 @@
       </div>
     </div>
 
+    <!-- Guestbook Window -->
+    <div
+      class="small-window draggable"
+      id="windowGuestbook"
+      style="top: 20%; left: 10%; width: 400px; height: 500px; display: none"
+    >
+      <div class="title-bar" id="titleBarGuestbook">
+        <div>📝 guestbook.exe</div>
+        <div class="buttons">
+          <button class="clickButton" title="Minimize">
+            <svg
+              viewBox="0 0 12 12"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="crispEdges"
+            >
+              <rect x="2" y="6" width="8" height="1" />
+            </svg>
+          </button>
+          <button class="clickButton" title="Close">
+            <svg
+              viewBox="0 0 12 12"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="crispEdges"
+            >
+              <line
+                x1="3"
+                y1="3"
+                x2="9"
+                y2="9"
+                stroke="black"
+                stroke-width="1"
+              />
+              <line
+                x1="9"
+                y1="3"
+                x2="3"
+                y2="9"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="content" style="overflow-y: auto">
+        <h2>Guestbook</h2>
+        <p>Leave a message!</p>
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box">
+          <a href="http://www.htmlcommentbox.com">Comment Form</a> is loading
+          comments...
+        </div>
+        <script type="text/javascript" id="hcb">
+          if (!window.hcb_user) {
+            hcb_user = {};
+          }
+          (function () {
+            var s = document.createElement("script"),
+              l = hcb_user.PAGE || ("" + window.location).replace(/'/g, "%27"),
+              h = "https://www.htmlcommentbox.com";
+            s.setAttribute("type", "text/javascript");
+            s.setAttribute(
+              "src",
+              h +
+                "/jread?page=" +
+                encodeURIComponent(l).replace("+", "%2B") +
+                "&mod=%241%24wq1rdBcg%24mdVu9eqWzPkmce8cil30n%2F" +
+                "&opts=16798&num=10&ts=1775654342970",
+            );
+            if (typeof s != "undefined")
+              document.getElementsByTagName("head")[0].appendChild(s);
+          })();
+        </script>
+        <!-- end www.htmlcommentbox.com -->
+      </div>
+    </div>
+
     <!-- Desktop Shortcuts -->
     <section id="shortcuts">
       <div class="shortcut">
@@ -549,6 +636,9 @@
         <div class="start-menu-item clickButton" id="menuItemLinks">
           <img src="assets/img/w2k_network_3.png" alt="icon" /> links.exe
         </div>
+        <div class="start-menu-item clickButton" id="menuItemGuestbook">
+          <img src="assets/img/w98_msn3.png" alt="icon" /> guestbook.exe
+        </div>
       </div>
     </div>
 
@@ -568,6 +658,13 @@
         style="display: none"
       >
         Links
+      </div>
+      <div
+        class="app-button active clickButton"
+        id="taskbarGuestbook"
+        style="display: none"
+      >
+        Guestbook
       </div>
     </div>
 

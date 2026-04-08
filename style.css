@@ -521,7 +521,7 @@ audio {
   width: 28px;
   display: flex;
   align-items: flex-end;
-  padding-top: 36px;
+  padding-top: 52px;
   color: white;
   font-weight: bold;
   font-family: Arial, sans-serif;
@@ -714,4 +714,139 @@ audio {
   100% {
     transform: translateX(-100%);
   }
+}
+/* --- Ретро-стилизация для HCB --- */
+
+/* Общие шрифты и базовые свойства */
+#HCB_comment_box,
+#HCB_comment_box * {
+  font-family: "Courier New", monospace !important;
+  color: black !important;
+  text-shadow: none !important;
+}
+
+/* Удаление визуального шума, теней и скрытие ненужных элементов */
+#HCB_comment_box .hcb-icon,
+img[src*="rss"],
+.home-desc,
+#hcb_subscribe,
+a#hcb_settings,
+#hcb_settings,
+.admin-link,
+#HCB_comment_box h3,
+#HCB_comment_box .hcb-shadow-t,
+#HCB_comment_box .hcb-shadow-b,
+#HCB_comment_box .hcb-shadow-tl,
+#HCB_comment_box .hcb-shadow-tr,
+#HCB_comment_box .hcb-shadow-bl,
+#HCB_comment_box .hcb-shadow-br {
+  display: none !important;
+}
+
+/* Формы и кнопки */
+#HCB_comment_box input[type="text"],
+#HCB_comment_box textarea {
+  background-color: #ffffff !important;
+  border: 2px inset #808080 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 4px !important;
+}
+
+#HCB_comment_box .btn,
+#HCB_comment_box input[type="submit"] {
+  background: #c0c0c0 !important;
+  border: 2px outset #fff !important;
+  border-radius: 0 !important;
+  box-shadow:
+    inset -1px -1px #808080,
+    inset 1px 1px #fff !important;
+  padding: 2px 8px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+}
+
+#HCB_comment_box .btn:active,
+#HCB_comment_box input[type="submit"]:active {
+  border: 2px inset #fff !important;
+  box-shadow: inset 1px 1px #808080 !important;
+  background: #a0a0a0 !important;
+}
+
+#HCB_comment_box a {
+  color: #000080 !important;
+  text-decoration: underline !important;
+}
+
+/* Комментарии: компактный вид */
+#HCB_comment_box {
+  display: block !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+#HCB_comment_box .comment {
+  margin-bottom: 8px !important;
+  padding-bottom: 4px;
+  border-bottom: 1px dotted #808080;
+}
+
+#HCB_comment_box blockquote {
+  margin: 0 !important;
+}
+#HCB_comment_box .hcb-comment-body {
+  margin: 2px 0 0 0 !important;
+}
+
+#HCB_comment_box .date {
+  font-size: 11px !important;
+  color: #666 !important;
+}
+
+#HCB_comment_box .hcb-comment-tb {
+  margin-top: 2px !important;
+}
+#HCB_comment_box .hcb-comment-tb button {
+  font-size: 11px !important;
+  color: #000080 !important;
+}
+
+/* Настройка формы ввода */
+#HCB_comment_form_box {
+  padding-bottom: 5px !important;
+  border-bottom: 1px solid #808080;
+  margin-bottom: 10px;
+}
+
+#HCB_comment_form_box .hcb-wrapper,
+#HCB_comment_form_box .hcb-wrapper-half {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+}
+
+#HCB_comment_box #hcb_form_name_container,
+#HCB_comment_box #hcb_form_content {
+  margin-bottom: 2px !important;
+  padding: 0 !important;
+}
+
+#HCB_comment_box textarea.commentbox {
+  margin-top: 2px !important;
+  height: 80px !important;
+}
+
+#HCB_comment_box .submit {
+  margin-top: 4px !important;
+  padding: 2px 10px !important;
+  display: inline-block !important;
+}
+
+#HCB_comment_box form {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#HCB_comment_box #comments_list {
+  overflow: visible !important;
 }
