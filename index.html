@@ -407,13 +407,26 @@
               📀 Playing now: Nintendo 3DS Internet Settings
             </div>
           </div>
-          <audio controls>
-            <source
-              src="assets/music/nintendo_3ds_internet_settings.mp3"
-              type="audio/mpeg"
-            />
-            Your browser does not support audio :(
-          </audio>
+          <!-- Меня немного корежило с дефолтного аудиотега поэтому пришлось делать свой :\\ -->
+          <!-- Хотя всё равно такое себе получилось -->
+
+          <!-- Сам аудиофайл -->
+          <audio
+            id="musicPlayer"
+            src="assets/music/nintendo_3ds_internet_settings.mp3"
+          ></audio>
+
+          <!-- Полоска трека -->
+          <div class="progress-container">
+            <div id="progressBarFill" class="progress-fill"></div>
+          </div>
+
+          <!-- Кастомные кнопки -->
+          <div class="player-controls">
+            <button id="playBtn" class="btn">▶ Play</button>
+            <button id="pauseBtn" class="btn">|| Pause</button>
+            <button id="loopBtn" class="btn">Loop: OFF</button>
+          </div>
         </div>
       </div>
     </div>
