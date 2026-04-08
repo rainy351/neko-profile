@@ -514,6 +514,7 @@
             <a href="https://wiby.me/" target="_blank">Wiby</a> — Search engine
             for the classic web.
           </li>
+          <li><i>Also check Start &gt; webring.exe!!!!</i></li>
         </ul>
         <p>
           <i>
@@ -685,6 +686,93 @@
       </div>
     </div>
 
+    <!-- Webring Window -->
+    <div
+      class="small-window draggable"
+      id="windowWebring"
+      style="display: none; top: 15%; left: 15%; height: 550px"
+    >
+      <div class="title-bar" id="titleBarWebring">
+        <div>🌐 webring.exe</div>
+        <div class="buttons">
+          <button class="clickButton" title="Minimize" aria-label="Minimize">
+            <svg
+              viewBox="0 0 12 5"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="crispEdges"
+            >
+              <rect x="2" y="6" width="8" height="1" />
+            </svg>
+          </button>
+          <button class="clickButton" title="Maximize" aria-label="Maximize">
+            <svg
+              viewBox="0 0 12 12"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="crispEdges"
+            >
+              <rect
+                x="2"
+                y="2"
+                width="8"
+                height="8"
+                fill="none"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+          </button>
+          <button class="clickButton" title="Close" aria-label="Close">
+            <svg
+              viewBox="0 0 12 12"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="crispEdges"
+            >
+              <line
+                x1="3"
+                y1="3"
+                x2="9"
+                y2="9"
+                stroke="black"
+                stroke-width="1"
+              />
+              <line
+                x1="9"
+                y1="3"
+                x2="3"
+                y2="9"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <script src="assets/webring.js"></script>
+        <h2><s>My Webring</s><br />Cool buttons!!!!</h2>
+        <div id="webringGrid" class="webring-grid">
+          <!-- Buttons will be here -->
+        </div>
+
+        <div class="link-back">
+          <h3>Link me too!!!</h3>
+          <div class="link-back-container">
+            <img
+              src="assets/img/button.gif"
+              alt="Rainy351 Button"
+              class="webring-item"
+            />
+            <div class="copy-box">
+              <textarea id="copyCode" readonly>
+ <a href="https://rainy351.nekoweb.org" target="_blank"><img src="https://rainy351.nekoweb.org/assets/img/button.gif" title="rainy351's website!!!" alt="rainy351"></a></textarea
+              >
+              <button class="clickButton" id="copyBtn">Copy Code</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Desktop Shortcuts -->
     <section id="shortcuts">
       <div class="shortcut">
@@ -756,6 +844,10 @@
         <div class="start-menu-item clickButton" id="menuItemExample">
           <img src="assets/img/w98_console_prompt.png" alt="icon" /> example.exe
         </div>
+        <div class="start-menu-item clickButton" id="menuItemWebring">
+          <img src="assets/img/w98_connected_world.png" alt="icon" />
+          webring.exe
+        </div>
       </div>
     </div>
 
@@ -789,6 +881,13 @@
         style="display: none"
       >
         Example
+      </div>
+      <div
+        class="app-button active clickButton"
+        id="taskbarWebring"
+        style="display: none"
+      >
+        Webring
       </div>
     </div>
 

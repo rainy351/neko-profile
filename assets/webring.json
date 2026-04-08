@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Nekoweb",
+    "url": "https://nekoweb.org",
+    "img": "https://nekoweb.org/assets/buttons/button11.gif"
+  },
+  {
+    "name": "Medjed",
+    "url": "https://medjed.nekoweb.org",
+    "img": "https://medjed.nekoweb.org/assets/images/button.jpg"
+  },
+  {
+    "name": "Eyeorb",
+    "url": "https://eyeorb.net",
+    "img": "https://eyeorb.net/pictures2/thevoid.gif"
+  },
+  {
+    "name": "Wiby",
+    "url": "https://wiby.me",
+    "img": "assets/img/wiby.gif"
+  },
+  {
+    "name": "Me",
+    "url": "https://rainy351.nekoweb.org",
+    "img": "assets/img/button.gif"
+  },
+  {
+    "name": "Rice place",
+    "url": "https://rice.place",
+    "img": "https://rice.place/button/riceus.gif"
+  }
+]

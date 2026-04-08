@@ -266,3 +266,29 @@ document.getElementById("shortcutBlog").addEventListener("click", (e) => {
   mainWindow.open();
   playSound();
 });
+
+new OSWindow(
+  "windowWebring",
+  "titleBarWebring",
+  "taskbarWebring",
+  "menuItemWebring",
+);
+
+document.getElementById("copyBtn").addEventListener("click", () => {
+  const copyText = document.getElementById("copyCode");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+
+  const originalText = document.getElementById("copyBtn").innerText;
+  document.getElementById("copyBtn").innerText = "Copied! xp";
+
+  copyText.setSelectionRange(0, 0);
+
+  setTimeout(() => {
+    document.getElementById("copyBtn").innerText = originalText;
+  }, 2000);
+
+  playSound();
+});
