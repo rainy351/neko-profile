@@ -1,3 +1,5 @@
+const allWindows = [];
+
 const clickSound = document.getElementById("clickSound");
 
 function playSound() {
@@ -12,36 +14,7 @@ document.querySelectorAll(".clickButton").forEach((button) => {
 let highestZIndex = 100;
 
 function updateTaskbarStatus() {
-  const mainTaskbarBtn = document.getElementById("taskbarMain");
-  const playerTaskbarBtn = document.getElementById("taskbarPlayer");
-  const linksTaskbarBtn = document.getElementById("taskbarLinks");
-  const guestbookTaskbarBtn = document.getElementById("taskbarGuestbook");
-
-  if (mainWindow.style.display !== "none") {
-    mainTaskbarBtn.classList.add("active");
-  } else {
-    mainTaskbarBtn.classList.remove("active");
-  }
-
-  if (playerWindow.style.display !== "none") {
-    playerTaskbarBtn.classList.add("active");
-  } else {
-    playerTaskbarBtn.classList.remove("active");
-  }
-
-  if (linksWindow.style.display !== "none") {
-    linksTaskbarBtn.classList.add("active");
-  } else {
-    linksTaskbarBtn.classList.remove("active");
-  }
-
-  if (guestbookWindow && guestbookTaskbarBtn) {
-    if (guestbookWindow.style.display !== "none") {
-      guestbookTaskbarBtn.classList.add("active");
-    } else {
-      guestbookTaskbarBtn.classList.remove("active");
-    }
-  }
+  allWindows.forEach((win) => win.updateStatus());
 }
 
 function bringToFront(windowEl) {
@@ -49,25 +22,6 @@ function bringToFront(windowEl) {
   windowEl.style.zIndex = highestZIndex;
   updateTaskbarStatus();
 }
-
-const mainWindow = document.getElementById("mainWindow");
-const playerWindow = document.getElementById("window2");
-const linksWindow = document.getElementById("window3");
-const guestbookWindow = document.getElementById("windowGuestbook");
-const taskbarGuestbookBtn = document.getElementById("taskbarGuestbook");
-
-makeDraggable(linksWindow, document.getElementById("titleBarLinks"));
-setupWindowControls(linksWindow, "taskbarLinks");
-
-makeDraggable(guestbookWindow, document.getElementById("titleBarGuestbook"));
-setupWindowControls(guestbookWindow, "taskbarGuestbook");
-
-mainWindow.addEventListener("mousedown", () => bringToFront(mainWindow));
-playerWindow.addEventListener("mousedown", () => bringToFront(playerWindow));
-linksWindow.addEventListener("mousedown", () => bringToFront(linksWindow));
-guestbookWindow.addEventListener("mousedown", () =>
-  bringToFront(guestbookWindow),
-);
 
 function makeDraggable(windowEl, titleBar) {
   let offsetX = 0,
@@ -115,9 +69,6 @@ function makeDraggable(windowEl, titleBar) {
   });
 }
 
-makeDraggable(mainWindow, document.getElementById("titleBarMain"));
-makeDraggable(playerWindow, document.getElementById("titleBarPlayer"));
-
 function setupWindowControls(windowEl, taskbarBtnId) {
   const minimizeBtn = windowEl.querySelector(
     "button[title='Minimize'], button[title='Свернуть']",
@@ -153,9 +104,6 @@ function setupWindowControls(windowEl, taskbarBtnId) {
   });
 }
 
-setupWindowControls(mainWindow, "taskbarMain");
-setupWindowControls(playerWindow, "taskbarPlayer");
-
 // Меню Пуск
 const startButton = document.getElementById("startButton");
 const startMenu = document.getElementById("startMenu");
@@ -176,42 +124,6 @@ document.addEventListener("click", (e) => {
     startMenu.style.display = "none";
     startButton.classList.remove("active");
   }
-});
-
-document.getElementById("menuItemRainy").addEventListener("click", () => {
-  mainWindow.style.display = "flex";
-  document.getElementById("taskbarMain").style.display = "flex";
-  bringToFront(mainWindow);
-  startMenu.style.display = "none";
-  startButton.classList.remove("active");
-});
-
-document.getElementById("menuItemPlayer").addEventListener("click", () => {
-  playerWindow.style.display = "flex";
-  document.getElementById("taskbarPlayer").style.display = "flex";
-  bringToFront(playerWindow);
-  startMenu.style.display = "none";
-  startButton.classList.remove("active");
-});
-
-document.getElementById("menuItemLinks").addEventListener("click", () => {
-  linksWindow.style.display = "flex";
-  document.getElementById("taskbarLinks").style.display = "flex";
-  bringToFront(linksWindow);
-  startMenu.style.display = "none";
-  startButton.classList.remove("active");
-});
-
-document.getElementById("menuItemGuestbook").addEventListener("click", () => {
-  guestbookWindow.style.display = "flex";
-  taskbarGuestbookBtn.style.display = "flex";
-  bringToFront(guestbookWindow);
-
-  // Прячем пуск после клика
-  const startMenu = document.getElementById("startMenu");
-  const startButton = document.getElementById("startButton");
-  startMenu.style.display = "none";
-  startButton.classList.remove("active");
 });
 
 updateTaskbarStatus();
@@ -275,3 +187,76 @@ document.getElementById("shortcutBlog").addEventListener("click", (e) => {
   showMainWindow();
   playSound();
 });
+
+class OSWindow {
+  constructor(id, titleBarId, taskbarBtnId, menuItemId) {
+    this.el = document.getElementById(id);
+    this.titleBar = document.getElementById(titleBarId);
+    this.taskbarBtn = document.getElementById(taskbarBtnId);
+    this.menuItem = document.getElementById(menuItemId);
+
+    allWindows.push(this);
+    this.init();
+  }
+
+  init() {
+    makeDraggable(this.el, this.titleBar);
+    this.el.addEventListener("mousedown", () => bringToFront(this.el));
+    this.el
+      .querySelector("button[title='Minimize']")
+      ?.addEventListener("click", () => this.hide());
+    this.el
+      .querySelector("button[title='Close']")
+      ?.addEventListener("click", () => this.close());
+    this.taskbarBtn.addEventListener("click", () => this.toggle());
+    this.menuItem?.addEventListener("click", () => {
+      this.open();
+      document.getElementById("startMenu").style.display = "none";
+      document.getElementById("startButton").classList.remove("active");
+    });
+  }
+
+  open() {
+    this.el.style.display = "flex";
+    this.taskbarBtn.style.display = "flex";
+    bringToFront(this.el);
+  }
+
+  hide() {
+    this.el.style.display = "none";
+    updateTaskbarStatus();
+  }
+
+  close() {
+    this.el.style.display = "none";
+    this.taskbarBtn.style.display = "none";
+    updateTaskbarStatus();
+  }
+
+  toggle() {
+    if (this.el.style.display === "none") {
+      this.open();
+    } else if (this.el.style.zIndex == highestZIndex) {
+      this.hide();
+    } else {
+      bringToFront(this.el);
+    }
+  }
+
+  updateStatus() {
+    if (this.el.style.display !== "none") {
+      this.taskbarBtn.classList.add("active");
+    } else {
+      this.taskbarBtn.classList.remove("active");
+    }
+  }
+}
+new OSWindow("mainWindow", "titleBarMain", "taskbarMain", "menuItemRainy");
+new OSWindow("window2", "titleBarPlayer", "taskbarPlayer", "menuItemPlayer");
+new OSWindow("window3", "titleBarLinks", "taskbarLinks", "menuItemLinks");
+new OSWindow(
+  "windowGuestbook",
+  "titleBarGuestbook",
+  "taskbarGuestbook",
+  "menuItemGuestbook",
+);
