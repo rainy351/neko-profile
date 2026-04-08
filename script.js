@@ -292,3 +292,5 @@ document.getElementById("copyBtn").addEventListener("click", () => {
 
   playSound();
 });
+
+new OSWindow("windowStats", "titleBarStats", "taskbarStats", "menuItemStats");

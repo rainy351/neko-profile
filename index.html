@@ -773,6 +773,51 @@
       </div>
     </div>
 
+    <!-- Stats Window -->
+    <div
+      class="small-window draggable"
+      id="windowStats"
+      style="display: none; top: 25%; left: 35%; width: 300px; height: auto"
+    >
+      <div class="title-bar" id="titleBarStats">
+        <div>📊 stats.exe</div>
+        <div class="buttons">
+          <button class="clickButton" title="Minimize">
+            <svg viewBox="0 0 12 12">
+              <rect x="2" y="6" width="8" height="1" />
+            </svg>
+          </button>
+          <button class="clickButton" title="Close">
+            <svg viewBox="0 0 12 12">
+              <line x1="3" y1="3" x2="9" y2="9" stroke="black" />
+              <line x1="9" y1="3" x2="3" y2="9" stroke="black" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <script src="assets/stats.js"></script>
+        <h2>Site Statistics</h2>
+        <ul style="list-style-type: none; padding-left: 0; line-height: 1.6">
+          <li id="visitors"><em>Visits</em>: Loading...</li>
+          <li id="followers"><em>Followers</em>: Loading...</li>
+          <li id="created"><em>Created</em>: Loading...</li>
+          <li id="updated"><em>Updated</em>: Loading...</li>
+        </ul>
+        <p
+          style="
+            font-size: 10px;
+            margin-top: 15px;
+            color: #666;
+            border-top: 1px dotted #888;
+            padding-top: 5px;
+          "
+        >
+          Source: Nekoweb API
+        </p>
+      </div>
+    </div>
+
     <!-- Desktop Shortcuts -->
     <section id="shortcuts">
       <div class="shortcut">
@@ -848,6 +893,9 @@
           <img src="assets/img/w98_connected_world.png" alt="icon" />
           webring.exe
         </div>
+        <div class="start-menu-item clickButton" id="menuItemStats">
+          <img src="assets/img/w98_chart1.png" alt="icon" /> stats.exe
+        </div>
       </div>
     </div>
 
@@ -888,6 +936,13 @@
         style="display: none"
       >
         Webring
+      </div>
+      <div
+        class="app-button active clickButton"
+        id="taskbarStats"
+        style="display: none"
+      >
+        Stats
       </div>
     </div>
 

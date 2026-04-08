@@ -28,5 +28,10 @@
     "name": "Rice place",
     "url": "https://rice.place",
     "img": "https://rice.place/button/riceus.gif"
+  },
+  {
+    "name": "Pillow fort",
+    "url": "https://mypillowfort.net/",
+    "img": "https://mypillowfort.net/media/MPFBTTN.gif"
   }
 ]
