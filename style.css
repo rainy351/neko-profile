@@ -830,7 +830,7 @@ a#hcb_settings,
 #HCB_comment_box #hcb_form_name_container,
 #HCB_comment_box #hcb_form_content {
   margin-bottom: 2px !important;
-  padding: 0 !important;
+  resize: none !important;
 }
 
 #HCB_comment_box textarea.commentbox {
