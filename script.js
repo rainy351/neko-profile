@@ -171,23 +171,6 @@ loopBtn.addEventListener("click", () => {
   document.getElementById("clickSound").play();
 });
 
-function showMainWindow() {
-  mainWindow.style.display = "flex";
-  document.getElementById("taskbarMain").style.display = "flex";
-  bringToFront(mainWindow);
-}
-
-document.getElementById("shortcutRainy").addEventListener("click", (e) => {
-  e.preventDefault();
-  showMainWindow();
-  playSound();
-});
-
-document.getElementById("shortcutBlog").addEventListener("click", (e) => {
-  showMainWindow();
-  playSound();
-});
-
 class OSWindow {
   constructor(id, titleBarId, taskbarBtnId, menuItemId) {
     this.el = document.getElementById(id);
@@ -251,7 +234,13 @@ class OSWindow {
     }
   }
 }
-new OSWindow("mainWindow", "titleBarMain", "taskbarMain", "menuItemRainy");
+
+mainWindow = new OSWindow(
+  "mainWindow",
+  "titleBarMain",
+  "taskbarMain",
+  "menuItemRainy",
+);
 new OSWindow("window2", "titleBarPlayer", "taskbarPlayer", "menuItemPlayer");
 new OSWindow("window3", "titleBarLinks", "taskbarLinks", "menuItemLinks");
 new OSWindow(
@@ -266,3 +255,14 @@ new OSWindow(
   "taskbarExample", // taskbar button ID
   "menuItemExample", // start menu item ID
 );
+
+document.getElementById("shortcutRainy").addEventListener("click", (e) => {
+  e.preventDefault();
+  mainWindow.open();
+  playSound();
+});
+
+document.getElementById("shortcutBlog").addEventListener("click", (e) => {
+  mainWindow.open();
+  playSound();
+});
