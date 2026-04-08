@@ -260,3 +260,9 @@ new OSWindow(
   "taskbarGuestbook",
   "menuItemGuestbook",
 );
+new OSWindow(
+  "windowExample", // window ID
+  "titleBarExample", // title bar ID
+  "taskbarExample", // taskbar button ID
+  "menuItemExample", // start menu item ID
+);
