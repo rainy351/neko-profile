@@ -981,3 +981,41 @@ a#hcb_settings,
   font-size: 12px;
   font-weight: bold;
 }
+
+.sticky-note {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  width: 140px;
+  background: #ffffa5;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transform: rotate(2deg);
+  border: 1px solid #d4d48a;
+  z-index: 5;
+  font-family: Tahoma, "Geneva", sans-serif;
+  pointer-events: none;
+}
+
+.note-content {
+  color: #333;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.note-content p {
+  margin: 2px 0;
+}
+
+.sticky-note::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
