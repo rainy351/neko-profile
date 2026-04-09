@@ -241,7 +241,12 @@ mainWindow = new OSWindow(
   "taskbarMain",
   "menuItemRainy",
 );
-new OSWindow("window2", "titleBarPlayer", "taskbarPlayer", "menuItemPlayer");
+playerWindow = new OSWindow(
+  "window2",
+  "titleBarPlayer",
+  "taskbarPlayer",
+  "menuItemPlayer",
+);
 new OSWindow("window3", "titleBarLinks", "taskbarLinks", "menuItemLinks");
 new OSWindow(
   "windowGuestbook",
@@ -294,3 +299,5 @@ document.getElementById("copyBtn").addEventListener("click", () => {
 });
 
 new OSWindow("windowStats", "titleBarStats", "taskbarStats", "menuItemStats");
+playerWindow.open();
+mainWindow.open();
