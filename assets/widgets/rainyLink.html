@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>rainyLink v1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 88px;
+        height: 31px;
+        background: transparent;
+        overflow: hidden;
+      }
+
+      #container {
+        position: relative;
+        width: 88px;
+        height: 31px;
+        background: #3b3b3b;
+        cursor: pointer;
+        overflow: hidden;
+        box-shadow:
+          inset 1px 1px #808080,
+          inset -1px -1px #fff;
+      }
+
+      body.large,
+      body.large html {
+        width: 176px;
+        height: 62px;
+      }
+      body.large #container {
+        width: 176px;
+        height: 62px;
+        box-shadow:
+          inset -1px -1px #fff,
+          inset 1px 1px #808080,
+          inset -2px -2px #dfdfdf,
+          inset 2px 2px #000;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        image-rendering: pixelated;
+        object-fit: fill;
+      }
+
+      #label {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+        text-decoration: none;
+        font-family: "MS Gothic", "Courier New", monospace;
+        font-size: 7px;
+        padding: 0 2px;
+        border: 1px solid #5d5d5d;
+        border-right: none;
+        border-bottom: none;
+        line-height: 1.1;
+        z-index: 10;
+      }
+      #label:hover {
+        background: #212181;
+        color: #fff;
+      }
+
+      body.large #label {
+        font-size: 9px;
+        bottom: 0px;
+        right: 0px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <a id="siteLink" href="https://rainy351.nekoweb.org" target="_parent">
+        <img
+          id="siteImg"
+          src="https://rainy351.nekoweb.org/assets/img/button.gif"
+          alt="RainyLink"
+        />
+      </a>
+      <a
+        id="label"
+        href="https://rainy351.nekoweb.org/#rainylink"
+        target="_parent"
+        >RainyLink</a
+      >
+    </div>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("size") === "large") {
+        document.body.classList.add("large");
+      }
+      async function initRotation() {
+        try {
+          // cool fallback mechanism (cuz CORS is a pain)
+          let ads;
+          const sources = [
+            "https://rainy351.nekoweb.org/assets/webring.json",
+            "/assets/webring.json",
+          ];
+
+          for (let url of sources) {
+            try {
+              let r = await fetch(url);
+              if (r.ok) {
+                ads = await r.json();
+                break;
+              }
+            } catch (e) {
+              continue;
+            }
+          }
+          // it was named adLink and siteImg but imagine what, adblock started blocking it :P
+          const link = document.getElementById("siteLink");
+          const img = document.getElementById("siteImg");
+
+          let lastIndex = -1;
+          function rotate() {
+            let index;
+            do {
+              index = Math.floor(Math.random() * ads.length);
+            } while (index === lastIndex && ads.length > 1);
+            lastIndex = index;
+            const ad = ads[index];
+            link.href = ad.url;
+            img.src = ad.img.startsWith("http")
+              ? ad.img
+              : "https://rainy351.nekoweb.org/" + ad.img;
+            img.alt = ad.name;
+          }
+          setInterval(rotate, 10000);
+          rotate();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      initRotation();
+    </script>
+  </body>
+</html>

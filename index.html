@@ -174,7 +174,6 @@
             About
           </a>
         </nav>
-
         <div class="gif-center">
           <a href="https://eyeorb.net/" target="_blank">
             <img src="https://eyeorb.net/pictures2/thevoid.gif" alt="thevoid" />
@@ -248,6 +247,29 @@
         <section id="blog">
           <h2>Latest blog posts</h2>
           <div class="blog-posts">
+            <div class="post">
+              <p class="post-title">4/10/2026 -- I made my own navlink!!!</p>
+              <p class="post-excerpt">
+                I just made my own navlink widget, called RainyLink! This widget
+                rotates randomly between all members of the network every 10
+                seconds. It comes in two standard sizes: 88x31 and 176x62.<br /><br />
+                How it works: <br />
+                1. You grab the code from the RainyLink tab in webring.exe.<br />
+                2. Put the widget on your site.<br />
+                3. Message me in the Guestbook with your site link and button
+                image.<br />
+                4. I add you to the JSON, and boom — you're in the global
+                rotation on every site in the network.<br /><br />
+                why did i do this? because why not<br /><br />
+                Join the network today! (pretty please)
+              </p>
+            </div>
+            <div class="post">
+              <p class="post-title">4/09/2026 -- I made rss feed for my site</p>
+              <p class="post-excerpt">
+                why? cuz i can :P<br /><br />https://rainy351.nekoweb.org/rss.xml
+              </p>
+            </div>
             <div class="post">
               <p class="post-title">4/08/2026 -- I added a guestbook!</p>
               <p class="post-excerpt">
@@ -690,7 +712,7 @@
     <div
       class="small-window draggable"
       id="windowWebring"
-      style="display: none; top: 15%; left: 15%; height: 550px"
+      style="display: none; top: 15%; left: 15%; height: 515px"
     >
       <div class="title-bar" id="titleBarWebring">
         <div>🌐 webring.exe</div>
@@ -747,26 +769,128 @@
           </button>
         </div>
       </div>
-      <div class="content">
-        <script src="assets/webring.js"></script>
-        <h2><s>My Webring</s><br />Cool buttons!!!!</h2>
-        <div id="webringGrid" class="webring-grid">
-          <!-- Buttons will be here -->
+      <div
+        class="content"
+        style="display: flex; flex-direction: column; padding: 0"
+      >
+        <!-- tab headers -->
+        <div
+          class="tabs"
+          style="
+            display: flex;
+            gap: 2px;
+            background: #c0c0c0;
+            padding: 5px 5px 0 5px;
+            border-bottom: 2px solid #fff;
+            box-shadow: inset 0 -2px #808080;
+          "
+        >
+          <button
+            class="tab-btn active"
+            onclick="openTab(event, 'tab-neighbours')"
+          >
+            Neighbours
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab-rainylink')">
+            RainyLink v1.0
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab-linkback')">
+            My Button
+          </button>
         </div>
 
-        <div class="link-back">
-          <h3>Link me too!!!</h3>
-          <div class="link-back-container">
-            <img
-              src="assets/img/button.gif"
-              alt="Rainy351 Button"
-              class="webring-item"
-            />
-            <div class="copy-box">
-              <textarea id="copyCode" readonly>
- <a href="https://rainy351.nekoweb.org" target="_blank"><img src="https://rainy351.nekoweb.org/assets/img/button.gif" title="rainy351's website!!!" alt="rainy351"></a></textarea
-              >
-              <button class="clickButton" id="copyBtn">Copy Code</button>
+        <!-- tab body -->
+        <div
+          class="tab-body"
+          style="
+            padding: 15px;
+            overflow-y: auto;
+            flex-grow: 1;
+            background: #fff;
+          "
+        >
+          <!-- tab 1: Neighbours -->
+          <div id="tab-neighbours" class="tab-content">
+            <h2 style="margin-top: 0">
+              <s>My Webring</s> <br />Cool buttons!!!!
+            </h2>
+            <script src="assets/webring.js"></script>
+            <div id="webringGrid" class="webring-grid"></div>
+          </div>
+
+          <!-- tab 2: RainyLink -->
+          <div id="tab-rainylink" class="tab-content" style="display: none">
+            <h2 style="margin-top: 0">Join the Network!</h2>
+            <p style="font-size: 12px">
+              Copy code below, add it to ur page, then message me in Guestbook
+              or mail so I can add u!
+            </p>
+            <p style="font-size: 10px">
+              (you prob should also have a button for your site)
+            </p>
+
+            <div style="margin-bottom: 15px">
+              <iframe
+                src="/assets/widgets/rainyLink.html?size=large"
+                width="176"
+                height="62"
+                frameborder="0"
+                scrolling="no"
+              ></iframe>
+              <div class="copy-box">
+                <textarea
+                  id="copyrLinkCode"
+                  readonly
+                  style="height: 52px; font-size: 12px"
+                >
+<iframe src="https://rainy351.nekoweb.org/widget.html?size=large" width="176" height="62" frameborder="0" scrolling="no"></iframe></textarea
+                >
+                <button class="clickButton" id="copyrLinkBtn">
+                  Copy Large (176x62)
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <iframe
+                src="/assets/widgets/rainyLink.html"
+                width="88"
+                height="31"
+                frameborder="0"
+                scrolling="no"
+              ></iframe>
+              <div class="copy-box">
+                <textarea
+                  id="copyrLinkSmallCode"
+                  readonly
+                  style="height: 52px; font-size: 12px"
+                >
+<iframe src="https://rainy351.nekoweb.org/widget.html" width="88" height="31" frameborder="0" scrolling="no"></iframe></textarea
+                >
+                <button class="clickButton" id="copyrLinkSmallBtn">
+                  Copy Small (88x31)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- tab 3: My Button -->
+          <div id="tab-linkback" class="tab-content" style="display: none">
+            <h2 style="margin-top: 0">My Button!</h2>
+            <div class="link-back-container">
+              <img
+                src="assets/img/button.gif"
+                alt="Rainy351 Button"
+                class="webring-item"
+              />
+              <div class="copy-box">
+                <textarea id="copyCode" readonly style="height: 60px">
+<a href="https://rainy351.nekoweb.org" target="_blank"><img src="https://rainy351.nekoweb.org/assets/img/button.gif" title="rainy351" alt="rainy351"></a></textarea
+                >
+                <button class="clickButton" id="copyBtn">
+                  Copy Button Code
+                </button>
+              </div>
             </div>
           </div>
         </div>

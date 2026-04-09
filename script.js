@@ -272,7 +272,7 @@ document.getElementById("shortcutBlog").addEventListener("click", (e) => {
   playSound();
 });
 
-new OSWindow(
+window.webringApp = new OSWindow(
   "windowWebring",
   "titleBarWebring",
   "taskbarWebring",
@@ -298,6 +298,79 @@ document.getElementById("copyBtn").addEventListener("click", () => {
   playSound();
 });
 
+document.getElementById("copyrLinkBtn").addEventListener("click", () => {
+  const copyText = document.getElementById("copyrLinkCode");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+
+  const originalText = document.getElementById("copyrLinkBtn").innerText;
+  document.getElementById("copyrLinkBtn").innerText = "Copied! xp";
+
+  copyText.setSelectionRange(0, 0);
+
+  setTimeout(() => {
+    document.getElementById("copyrLinkBtn").innerText = originalText;
+  }, 2000);
+
+  playSound();
+});
+
+document.getElementById("copyrLinkSmallBtn").addEventListener("click", () => {
+  const copyText = document.getElementById("copyrLinkSmallCode");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+
+  const originalText = document.getElementById("copyrLinkSmallBtn").innerText;
+  document.getElementById("copyrLinkSmallBtn").innerText = "Copied! xp";
+
+  copyText.setSelectionRange(0, 0);
+
+  setTimeout(() => {
+    document.getElementById("copyrLinkSmallBtn").innerText = originalText;
+  }, 2000);
+
+  playSound();
+});
+
 new OSWindow("windowStats", "titleBarStats", "taskbarStats", "menuItemStats");
 playerWindow.open();
 mainWindow.open();
+
+function openTab(evt, tabName) {
+  const tabcontent = document.getElementsByClassName("tab-content");
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  const tablinks = document.getElementsByClassName("tab-btn");
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+
+  playSound();
+}
+
+function handleRouting() {
+  const hash = window.location.hash;
+  if (hash === "#rainylink") {
+    if (window.webringApp) {
+      window.webringApp.open();
+    }
+    const rainyTabBtn = document.querySelector(
+      ".tab-btn[onclick*='tab-rainylink']",
+    );
+    if (rainyTabBtn) {
+      rainyTabBtn.click();
+    }
+  }
+}
+
+window.addEventListener("load", handleRouting);
+window.addEventListener("hashchange", handleRouting);
