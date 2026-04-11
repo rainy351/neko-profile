@@ -1,0 +1,47 @@
+[
+  {
+    "date": "4/11/2026",
+    "title": "I'm so stupid lmao",
+    "excerpt": "I've split script.js into multiple files, and now I'll have problems orienting myself in the codebase, lol. I hope I won't mess up anything too bad..."
+  },
+  {
+    "date": "4/10/2026",
+    "title": "I made my own navlink!!!",
+    "excerpt": "I just made my own navlink widget, called RainyLink! This widget rotates randomly between all members of the network every 10 seconds. It comes in two standard sizes: 88x31 and 176x62.<br><br>How it works: <br>1. You grab the code from the RainyLink tab in Start &gt; webring.exe.<br>(or go to https://rainy351.nekoweb.org/#rainylink)<br>2. Put the widget on your site.<br>3. Message me in the Guestbook (or mail) with your site link and button image.<br>4. I add you to the JSON, and boom — you're in the global rotation on every site in the network.<br><br>why did i do this? because why not<br><br>Join the network today! (pretty please)"
+  },
+  {
+    "date": "4/09/2026",
+    "title": "I made rss feed for my site",
+    "excerpt": "why? cuz i can :P<br><br>https://rainy351.nekoweb.org/rss.xml"
+  },
+  {
+    "date": "4/08/2026",
+    "title": "I added a guestbook!",
+    "excerpt": "I added a guestbook to the site, so now you can leave comments~<br>It's powered by HTML Comment Box, which is a service that allows you to add a comment section to ur static site. Check it out if you want and ykyk. <br>Feel free to leave a message~ (i hope it works) xp"
+  },
+  {
+    "date": null,
+    "title": null,
+    "excerpt": "So, I just stumbled upon someone else's site, and it’s like 300 times better in every single way. I’m honestly tilted as hell, lol.<br><br>These people write actual blogs, draw stuff, design whole websites...<br><br>Meanwhile, I’m just a talentless, unoriginal jerk who doesn't even have anything to write about, hahasjajaha"
+  },
+  {
+    "date": "4/07/2026",
+    "title": "Should I even be blogging like this?",
+    "excerpt": "Probably should integrate a real blog engine instead of just typing here. But then again, I'm too lazy, so let it be~"
+  },
+  {
+    "date": "4/07/2026",
+    "title": "I'm back from the dead~",
+    "excerpt": "Had to redo everything; maintaining a one-file site was getting messy, so now it's split into HTML+CSS+JS. Tweaked the design a bit and improved the window logic. Anyway, I'm back in action! :D"
+  },
+  {
+    "date": "8/26/2025",
+    "title": "Should start filling this site.",
+    "excerpt": "Should start preparing some text for the site..."
+  },
+  {
+    "date": "8/24/2025",
+    "title": "First draft of the site?",
+    "excerpt": "Saw all these cool nekoweb sites and decided I wanted one too. Bear with me now. :p"
+  }
+]

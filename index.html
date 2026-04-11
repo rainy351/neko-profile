@@ -10,58 +10,7 @@
     <div class="window draggable" id="mainWindow">
       <div class="title-bar" id="titleBarMain">
         <div>🌐 rainy351.exe</div>
-        <div class="buttons">
-          <button class="clickButton" title="Minimize" aria-label="Minimize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect x="2" y="6" width="8" height="1" />
-            </svg>
-          </button>
-          <button class="clickButton" title="Maximize" aria-label="Maximize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="8"
-                height="8"
-                fill="none"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-          <button class="clickButton" title="Close" aria-label="Close">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <line
-                x1="3"
-                y1="3"
-                x2="9"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-              <line
-                x1="9"
-                y1="3"
-                x2="3"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-        </div>
+        <window-controls></window-controls>
       </div>
 
       <div class="content">
@@ -247,87 +196,7 @@
         <section id="blog">
           <h2>Latest blog posts</h2>
           <div class="blog-posts">
-            <div class="post">
-              <p class="post-title">4/10/2026 -- I made my own navlink!!!</p>
-              <p class="post-excerpt">
-                I just made my own navlink widget, called RainyLink! This widget
-                rotates randomly between all members of the network every 10
-                seconds. It comes in two standard sizes: 88x31 and 176x62.<br /><br />
-                How it works: <br />
-                1. You grab the code from the RainyLink tab in Start &gt;
-                webring.exe.<br />(or go to
-                https://rainy351.nekoweb.org/#rainylink)<br />
-                2. Put the widget on your site.<br />
-                3. Message me in the Guestbook (or mail) with your site link and
-                button image.<br />
-                4. I add you to the JSON, and boom — you're in the global
-                rotation on every site in the network.<br /><br />
-                why did i do this? because why not<br /><br />
-                Join the network today! (pretty please)
-              </p>
-            </div>
-            <div class="post">
-              <p class="post-title">4/09/2026 -- I made rss feed for my site</p>
-              <p class="post-excerpt">
-                why? cuz i can :P<br /><br />https://rainy351.nekoweb.org/rss.xml
-              </p>
-            </div>
-            <div class="post">
-              <p class="post-title">4/08/2026 -- I added a guestbook!</p>
-              <p class="post-excerpt">
-                I added a guestbook to the site, so now you can leave comments~
-                <br />It's powered by HTML Comment Box, which is a service that
-                allows you to add a comment section to ur static site. Check it
-                out if you want and ykyk. <br />Feel free to leave a message~ (i
-                hope it works) xp
-              </p>
-            </div>
-            <div class="post">
-              <p class="post-excerpt">
-                So, I just stumbled upon someone else's site, and it’s like 300
-                times better in every single way. I’m honestly tilted as hell,
-                lol.
-                <br /><br />
-                These people write actual blogs, draw stuff, design whole
-                websites...
-                <br /><br />
-                Meanwhile, I’m just a talentless, unoriginal jerk who doesn't
-                even have anything to write about, hahasjajaha
-              </p>
-            </div>
-            <div class="post">
-              <p class="post-title">
-                4/07/2026 -- Should I even be blogging like this?
-              </p>
-              <p class="post-excerpt">
-                Probably should integrate a real blog engine instead of just
-                typing here. But then again, I'm too lazy, so let it be~
-              </p>
-            </div>
-            <div class="post">
-              <p class="post-title">4/07/2026 -- I'm back from the dead~</p>
-              <p class="post-excerpt">
-                Had to redo everything; maintaining a one-file site was getting
-                messy, so now it's split into HTML+CSS+JS. Tweaked the design a
-                bit and improved the window logic. Anyway, I'm back in action!
-                :D
-              </p>
-            </div>
-            <div class="post">
-              <p class="post-title">
-                8/26/2025 -- Should start filling this site.
-              </p>
-              <p class="post-excerpt">
-                Should start preparing some text for the site...
-              </p>
-            </div>
-            <div class="post">
-              <p class="post-title">8/24/2025 -- First draft of the site?</p>
-              <p class="post-excerpt">
-                Saw all these cool nekoweb sites and decided I wanted one too.
-                Bear with me now. :p
-              </p>
-            </div>
+            <!-- Blog posts will be loaded here by JavaScript -->
           </div>
         </section>
 
@@ -370,58 +239,7 @@
     >
       <div class="title-bar" id="titleBarPlayer">
         <div>🎧 player.exe</div>
-        <div class="buttons">
-          <button class="clickButton" title="Minimize" aria-label="Minimize">
-            <svg
-              viewBox="0 0 12 5"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect x="2" y="6" width="8" height="1" />
-            </svg>
-          </button>
-          <button class="clickButton" title="Maximize" aria-label="Maximize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="8"
-                height="8"
-                fill="none"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-          <button class="clickButton" title="Close" aria-label="Close">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <line
-                x1="3"
-                y1="3"
-                x2="9"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-              <line
-                x1="9"
-                y1="3"
-                x2="3"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-        </div>
+        <window-controls></window-controls>
       </div>
 
       <div class="content">
@@ -474,58 +292,7 @@
     >
       <div class="title-bar" id="titleBarLinks">
         <div>🔗 links.exe</div>
-        <div class="buttons">
-          <button class="clickButton" title="Minimize" aria-label="Minimize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect x="2" y="6" width="8" height="1" />
-            </svg>
-          </button>
-          <button class="clickButton" title="Maximize" aria-label="Maximize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="8"
-                height="8"
-                fill="none"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-          <button class="clickButton" title="Close" aria-label="Close">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <line
-                x1="3"
-                y1="3"
-                x2="9"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-              <line
-                x1="9"
-                y1="3"
-                x2="3"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-        </div>
+        <window-controls></window-controls>
       </div>
       <div class="content">
         <h2>Cool sites around the web</h2>
@@ -557,58 +324,7 @@
     >
       <div class="title-bar" id="titleBarGuestbook">
         <div>📝 guestbook.exe</div>
-        <div class="buttons">
-          <button class="clickButton" title="Minimize" aria-label="Minimize">
-            <svg
-              viewBox="0 0 12 5"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect x="2" y="6" width="8" height="1" />
-            </svg>
-          </button>
-          <button class="clickButton" title="Maximize" aria-label="Maximize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="8"
-                height="8"
-                fill="none"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-          <button class="clickButton" title="Close">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <line
-                x1="3"
-                y1="3"
-                x2="9"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-              <line
-                x1="9"
-                y1="3"
-                x2="3"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-        </div>
+        <window-controls></window-controls>
       </div>
       <div class="content" style="overflow-y: auto">
         <h2>Guestbook</h2>
@@ -651,58 +367,7 @@
     >
       <div class="title-bar" id="titleBarExample">
         <div>&lt;/&gt; example.exe</div>
-        <div class="buttons">
-          <button class="clickButton" title="Minimize" aria-label="Minimize">
-            <svg
-              viewBox="0 0 12 5"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect x="2" y="6" width="8" height="1" />
-            </svg>
-          </button>
-          <button class="clickButton" title="Maximize" aria-label="Maximize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="8"
-                height="8"
-                fill="none"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-          <button class="clickButton" title="Close" aria-label="Close">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <line
-                x1="3"
-                y1="3"
-                x2="9"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-              <line
-                x1="9"
-                y1="3"
-                x2="3"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-        </div>
+        <window-controls></window-controls>
       </div>
       <div class="content">
         <h2>Example App</h2>
@@ -718,58 +383,7 @@
     >
       <div class="title-bar" id="titleBarWebring">
         <div>🌐 webring.exe</div>
-        <div class="buttons">
-          <button class="clickButton" title="Minimize" aria-label="Minimize">
-            <svg
-              viewBox="0 0 12 5"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect x="2" y="6" width="8" height="1" />
-            </svg>
-          </button>
-          <button class="clickButton" title="Maximize" aria-label="Maximize">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="8"
-                height="8"
-                fill="none"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-          <button class="clickButton" title="Close" aria-label="Close">
-            <svg
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <line
-                x1="3"
-                y1="3"
-                x2="9"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-              <line
-                x1="9"
-                y1="3"
-                x2="3"
-                y2="9"
-                stroke="black"
-                stroke-width="1"
-              />
-            </svg>
-          </button>
-        </div>
+        <window-controls></window-controls>
       </div>
       <div
         class="content"
@@ -787,18 +401,13 @@
             box-shadow: inset 0 -2px #808080;
           "
         >
-          <button
-            class="tab-btn active"
-            onclick="openTab(event, 'tab-neighbours')"
-          >
+          <button class="tab-btn active" data-tab="tab-neighbours">
             Neighbours
           </button>
-          <button class="tab-btn" onclick="openTab(event, 'tab-rainylink')">
+          <button class="tab-btn" data-tab="tab-rainylink">
             RainyLink v1.0
           </button>
-          <button class="tab-btn" onclick="openTab(event, 'tab-linkback')">
-            My Button
-          </button>
+          <button class="tab-btn" data-tab="tab-linkback">My Button</button>
         </div>
 
         <!-- tab body -->
@@ -817,7 +426,9 @@
               <s>My Webring</s> <br />Cool buttons!!!!
             </h2>
             <script src="assets/webring.js"></script>
-            <div id="webringGrid" class="webring-grid"></div>
+            <div id="webringGrid" class="webring-grid">
+              <!-- Buttons will be loaded here by JavaScript -->
+            </div>
           </div>
 
           <!-- tab 2: RainyLink -->
@@ -907,19 +518,7 @@
     >
       <div class="title-bar" id="titleBarStats">
         <div>📊 stats.exe</div>
-        <div class="buttons">
-          <button class="clickButton" title="Minimize">
-            <svg viewBox="0 0 12 12">
-              <rect x="2" y="6" width="8" height="1" />
-            </svg>
-          </button>
-          <button class="clickButton" title="Close">
-            <svg viewBox="0 0 12 12">
-              <line x1="3" y1="3" x2="9" y2="9" stroke="black" />
-              <line x1="9" y1="3" x2="3" y2="9" stroke="black" />
-            </svg>
-          </button>
-        </div>
+        <window-controls></window-controls>
       </div>
       <div class="content">
         <script src="assets/stats.js"></script>
@@ -1081,7 +680,8 @@
         Stats
       </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="js/window-controls.js"></script>
+    <script src="js/blog.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
