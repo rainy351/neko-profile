@@ -1,4 +1,4 @@
-import { playSound } from "./globals.js";
+// import { playSound } from "./globals.js";
 
 export function initStartMenu() {
   const startButton = document.getElementById("startButton");

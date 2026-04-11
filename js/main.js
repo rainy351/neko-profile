@@ -39,11 +39,11 @@ window.webringApp = new OSWindow(
 );
 new OSWindow("windowStats", "titleBarStats", "taskbarStats", "menuItemStats");
 
-document.getElementById("shortcutRainy").addEventListener("click", (e) => {
-  e.preventDefault();
-  mainWindow.open();
-  playSound();
-});
+// document.getElementById("shortcutRainy").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   mainWindow.open();
+//   playSound();
+// });
 document.getElementById("shortcutBlog").addEventListener("click", (e) => {
   mainWindow.open();
   playSound();
@@ -98,5 +98,16 @@ document.querySelector(".tabs").addEventListener("click", (e) => {
     .querySelectorAll(".tab-btn")
     .forEach((btn) => btn.classList.remove("active"));
   tabBtn.classList.add("active");
-  playSound();
+  // playSound();
+});
+
+document.addEventListener("mousedown", (e) => {
+  const isClickable =
+    e.target.closest(".clickButton") ||
+    e.target.closest(".tab-btn") ||
+    e.target.closest("window-controls button");
+
+  if (isClickable) {
+    playSound();
+  }
 });

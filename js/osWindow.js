@@ -2,7 +2,7 @@ import {
   allWindows,
   bringToFront,
   updateTaskbarStatus,
-  playSound,
+  // playSound,
   highestZIndex,
 } from "./globals.js";
 import { makeDraggable } from "./draggable.js";

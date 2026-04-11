@@ -8,6 +8,7 @@ export function playSound() {
   clickSound.currentTime = 0;
   clickSound.play().catch((e) => {});
 }
+window.playSound = playSound;
 
 export function updateTaskbarStatus() {
   allWindows.forEach((win) => win.updateStatus());

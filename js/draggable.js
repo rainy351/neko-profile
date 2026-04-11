@@ -1,5 +1,3 @@
-import { bringToFront, setHighestZIndex } from "./globals.js";
-
 export function makeDraggable(windowEl, titleBar) {
   let offsetX = 0,
     offsetY = 0,
