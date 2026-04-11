@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>rainy351's logsssss</title>
+  <link>https://rainy351.nekoweb.org/</link>
+  <description>Postshitting and shitposting on my nekowebsite.</description>
+
+  <item>
+    <title>RainyLink v1.0: Launching the Network</title>
+    <link>https://rainy351.nekoweb.org/#blog</link>
+    <guid>rainylink-launch-20260410</guid>
+    <description><![CDATA[
+        I just launched RainyLink v1.0 — my own navlink widget!
+        It's a dynamic way to exchange traffic and support the community. 
+        This widget comes in two standard sizes: 88x31 and 176x62, and rotates randomly between all members of the network every 10 seconds.
+        Join the network today!
+    ]]></description>
+    <pubDate>Fri, 10 Apr 2026 1:03:00 +0300</pubDate>
+    </item>
+
+  <item>
+    <title>Initial RSS Test</title>
+    <link>https://rainy351.nekoweb.org/</link>
+    <guid>testpost001</guid>
+    <description><![CDATA[hello world skdnalnfajl]]></description>
+    <pubDate>Thu, 09 Apr 2026 16:00:00 +0300</pubDate>
+  </item>
+</channel>
+</rss>

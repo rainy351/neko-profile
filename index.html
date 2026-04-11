@@ -254,10 +254,12 @@
                 rotates randomly between all members of the network every 10
                 seconds. It comes in two standard sizes: 88x31 and 176x62.<br /><br />
                 How it works: <br />
-                1. You grab the code from the RainyLink tab in webring.exe.<br />
+                1. You grab the code from the RainyLink tab in Start &gt;
+                webring.exe.<br />(or go to
+                https://rainy351.nekoweb.org/#rainylink)<br />
                 2. Put the widget on your site.<br />
-                3. Message me in the Guestbook with your site link and button
-                image.<br />
+                3. Message me in the Guestbook (or mail) with your site link and
+                button image.<br />
                 4. I add you to the JSON, and boom — you're in the global
                 rotation on every site in the network.<br /><br />
                 why did i do this? because why not<br /><br />
@@ -845,7 +847,7 @@
                 >
 <iframe src="https://rainy351.nekoweb.org/widget.html?size=large" width="176" height="62" frameborder="0" scrolling="no"></iframe></textarea
                 >
-                <button class="clickButton" id="copyrLinkBtn">
+                <button class="copy-button" data-target="copyrLinkCode">
                   Copy Large (176x62)
                 </button>
               </div>
@@ -867,7 +869,7 @@
                 >
 <iframe src="https://rainy351.nekoweb.org/widget.html" width="88" height="31" frameborder="0" scrolling="no"></iframe></textarea
                 >
-                <button class="clickButton" id="copyrLinkSmallBtn">
+                <button class="copy-button" data-target="copyrLinkSmallCode">
                   Copy Small (88x31)
                 </button>
               </div>
@@ -887,7 +889,7 @@
                 <textarea id="copyCode" readonly style="height: 60px">
 <a href="https://rainy351.nekoweb.org" target="_blank"><img src="https://rainy351.nekoweb.org/assets/img/button.gif" title="rainy351" alt="rainy351"></a></textarea
                 >
-                <button class="clickButton" id="copyBtn">
+                <button class="copy-button" data-target="copyCode">
                   Copy Button Code
                 </button>
               </div>
@@ -928,6 +930,9 @@
           <li id="created"><em>Created</em>: Loading...</li>
           <li id="updated"><em>Updated</em>: Loading...</li>
         </ul>
+        <div class="follow-container">
+          <!--# follow -->
+        </div>
         <p
           style="
             font-size: 10px;

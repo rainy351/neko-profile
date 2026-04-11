@@ -17,12 +17,12 @@
   {
     "name": "Wiby",
     "url": "https://wiby.me",
-    "img": "/assets/img/wiby.gif"
+    "img": "assets/img/wiby.gif"
   },
   {
     "name": "Me",
     "url": "https://rainy351.nekoweb.org",
-    "img": "/assets/img/button.gif"
+    "img": "assets/img/button.gif"
   },
   {
     "name": "Rice place",
@@ -33,5 +33,10 @@
     "name": "Pillow fort",
     "url": "https://mypillowfort.net/",
     "img": "https://mypillowfort.net/media/MPFBTTN.gif"
+  },
+  {
+    "name": "Nyscyra",
+    "url": "https://nyscyra.net/",
+    "img": "https://nyscyra.net/img/button.png"
   }
 ]

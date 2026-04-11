@@ -279,63 +279,6 @@ window.webringApp = new OSWindow(
   "menuItemWebring",
 );
 
-document.getElementById("copyBtn").addEventListener("click", () => {
-  const copyText = document.getElementById("copyCode");
-
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
-
-  const originalText = document.getElementById("copyBtn").innerText;
-  document.getElementById("copyBtn").innerText = "Copied! xp";
-
-  copyText.setSelectionRange(0, 0);
-
-  setTimeout(() => {
-    document.getElementById("copyBtn").innerText = originalText;
-  }, 2000);
-
-  playSound();
-});
-
-document.getElementById("copyrLinkBtn").addEventListener("click", () => {
-  const copyText = document.getElementById("copyrLinkCode");
-
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
-
-  const originalText = document.getElementById("copyrLinkBtn").innerText;
-  document.getElementById("copyrLinkBtn").innerText = "Copied! xp";
-
-  copyText.setSelectionRange(0, 0);
-
-  setTimeout(() => {
-    document.getElementById("copyrLinkBtn").innerText = originalText;
-  }, 2000);
-
-  playSound();
-});
-
-document.getElementById("copyrLinkSmallBtn").addEventListener("click", () => {
-  const copyText = document.getElementById("copyrLinkSmallCode");
-
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
-
-  const originalText = document.getElementById("copyrLinkSmallBtn").innerText;
-  document.getElementById("copyrLinkSmallBtn").innerText = "Copied! xp";
-
-  copyText.setSelectionRange(0, 0);
-
-  setTimeout(() => {
-    document.getElementById("copyrLinkSmallBtn").innerText = originalText;
-  }, 2000);
-
-  playSound();
-});
-
 new OSWindow("windowStats", "titleBarStats", "taskbarStats", "menuItemStats");
 playerWindow.open();
 mainWindow.open();
@@ -374,3 +317,23 @@ function handleRouting() {
 
 window.addEventListener("load", handleRouting);
 window.addEventListener("hashchange", handleRouting);
+
+document.querySelectorAll(".copy-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("data-target");
+    const textarea = document.getElementById(targetId);
+    if (!textarea) return;
+
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(textarea.value);
+
+    const original = button.innerText;
+    button.innerText = "Copied! xp";
+    textarea.setSelectionRange(0, 0);
+    setTimeout(() => {
+      button.innerText = original;
+    }, 2000);
+    playSound();
+  });
+});
